@@ -16,12 +16,11 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(
-  cors({
-    origin: process.env.FRONTEND_BASE_URL || "http://localhost:5173",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: process.env.FRONTEND_BASE_URL,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+}));
 
 app.use(express.json());
 app.use(cookieParser());
