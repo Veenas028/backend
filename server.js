@@ -17,7 +17,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_BASE_URL,
+  origin: process.env.FRONTEND_BASE_URL || "https://frontend-eta-one-15.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
