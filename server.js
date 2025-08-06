@@ -33,12 +33,7 @@ app.use("/api/expense", expenseRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
 // Serve frontend in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../Frontend/dist")));
-  app.get("*", (req, res) =>
-    res.sendFile(path.join(__dirname, "../Frontend/dist/index.html"))
-  );
-}
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
